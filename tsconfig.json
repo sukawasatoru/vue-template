@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "jsx": "preserve",
+    "jsxFactory": "h",
+    "sourceMap": true,
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "es2018",
+      "es2018.intl",
+      "es2018.promise",
+      "es2018.regexp",
+      "scripthost"
+    ],
+    "rootDirs": [
+      "src",
+      "stories"
+    ],
+    "baseUrl": "src",
+    "newLine": "LF",
+    "removeComments": true,
+    "outDir": "dist",
+    "noEmit": true,
+    "strict": true
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
