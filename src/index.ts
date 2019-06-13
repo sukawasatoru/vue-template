@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import App from './app';
+import App from './app.vue';
 import Vue from 'vue';
 
-new Vue({render: h => h(App),}).$mount('#root');
+new Vue({render: h => h(App)}).$mount('#root');

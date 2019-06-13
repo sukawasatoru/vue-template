@@ -26,13 +26,17 @@ const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
  *  */
 module.exports = async ({baseConfig, mode, config}) => {
     config.module.rules.push({
-        test: /\.(ts|tsx)$/,
-        use: [
-            {loader: 'babel-loader'},
-        ],
+        test: /\.ts$/,
         exclude: /node_modules/,
+        use: [{
+            loader: 'ts-loader',
+            options: {
+                appendTsSuffixTo: [/\.vue$/],
+                transpileOnly: true,
+            }
+        }],
     });
-    config.resolve.extensions.push('.ts', '.tsx');
+    config.resolve.extensions.push('.ts');
     config.plugins.push(new ForkTsCheckerWebpackPlugin());
     return config;
 };

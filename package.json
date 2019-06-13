@@ -11,7 +11,12 @@
   },
   "author": {
     "name": "Satoru Sukawa",
-    "email": "sukawasatoru.github@outlook.jp"
+    "email": "sukawasatoru.github@outlook.jp",
+    "url": "https://github.com/sukawasatoru"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sukawasatoru/vue-template.git"
   },
   "license": "Apache-2.0",
   "private": true,
@@ -34,9 +39,6 @@
     "@types/webpack": "4.4.32",
     "@types/webpack-dev-server": "3.1.6",
     "@typescript-eslint/eslint-plugin": "1.9.0",
-    "@vue/babel-preset-jsx": "1.0.0",
-    "@vue/babel-helper-vue-jsx-merge-props": "1.0.0",
-    "babel-loader": "8.0.6",
     "babel-preset-vue": "2.0.2",
     "bootstrap": "4.3.1",
     "cross-env": "5.2.0",
@@ -48,6 +50,7 @@
     "html-webpack-plugin": "3.2.0",
     "material-design-icons": "3.0.1",
     "style-loader": "0.23.1",
+    "ts-loader": "6.0.2",
     "typescript": "3.5.1",
     "vue-loader": "15.7.0",
     "vue-template-compiler": "2.6.10",

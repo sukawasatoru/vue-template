@@ -18,9 +18,9 @@ import {configure} from '@storybook/vue';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'material-design-icons/iconfont/material-icons.css';
 
+const req = require.context('../stories', true, /\.stories\.vue$/);
 
 function loadStories() {
-    const req = require.context('../stories', true, /\.stories\.tsx$/);
     req.keys().forEach(req);
 }
 

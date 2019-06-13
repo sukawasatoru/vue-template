@@ -3,8 +3,6 @@
     "target": "esnext",
     "module": "esnext",
     "moduleResolution": "node",
-    "jsx": "preserve",
-    "jsxFactory": "h",
     "sourceMap": true,
     "lib": [
       "dom",

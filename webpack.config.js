@@ -48,16 +48,22 @@ const common = {
             vue$: 'vue/dist/vue.esm.js',
         },
         modules: ['node_modules'],
-        extensions: ['.ts', '.tsx', '.vue', '.js', '.json'],
+        extensions: ['.js', '.json', '.ts'],
     },
     module: {
         rules: [
             {test: /\.css$/, use: [{loader: 'style-loader'}, {loader: 'vue-style-loader'}, {loader: 'css-loader'}]},
             {test: /\.vue$/, use: [{loader: 'vue-loader'}]},
             {
-                test: /\.(ts|tsx)$/,
-                use: [{loader: 'babel-loader'}],
-                exclude: file => /node_modules/.test(file) && !/\.vue\.js/.test(file),
+                test: /\.ts$/,
+                exclude: /node_modules/,
+                use: [{
+                    loader: 'ts-loader',
+                    options: {
+                        appendTsSuffixTo: [/\.vue$/],
+                        transpileOnly: true,
+                    },
+                }],
             },
             {test: /\.(png|svg|jpg|git|ttf|woff|woff2|eot)$/, use: [{loader: 'file-loader'}]},
         ],

@@ -7,7 +7,5 @@
   },
   "plugins": [
     "@typescript-eslint"
-  ],
-  "rules": {
-  }
+  ]
 }
