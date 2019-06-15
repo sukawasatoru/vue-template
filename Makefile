@@ -41,7 +41,7 @@ distclean: clean
 	-$(RMRF) node_modules
 
 check:
-	$(NPX) eslint --ext .js,.jsx,.ts,.tsx src
+	$(NPX) eslint --ext .js,.ts,.vue src
 test:
 	$(NPM) test
 
