@@ -16,5 +16,9 @@
 
 import App from './app.vue';
 import Vue from 'vue';
+import {plugin as VueFunctionApi} from 'vue-function-api';
 
+Vue.use(VueFunctionApi);
+
+// noinspection JSUnusedGlobalSymbols
 new Vue({render: h => h(App)}).$mount('#root');

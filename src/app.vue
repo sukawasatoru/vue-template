@@ -17,19 +17,37 @@
 <template>
     <div>
         <div>
-            Hello
+            Hello {{world}}
         </div>
-        <HelloSFC/>
+        <div>
+            {{worldObj.hello}} {{worldObj.world}}
+        </div>
     </div>
 </template>
 
 <script lang="ts">
-import HelloSFC from './hello-sfc.vue';
-import Vue from 'vue';
+import {createComponent, state, value} from "vue-function-api";
 
-const App = Vue.extend({
-    components: {HelloSFC},
+function worldValue(this: void) {
+    const world = value('World');
+    setTimeout(() => world.value += '!', 2000);
+    return world;
+}
+
+function worldObject(this: void) {
+    const worldObject = state({hello: 'HELLO', world: 'WORLD'});
+    setTimeout(() => worldObject.world += '!!', 3000);
+    return worldObject;
+}
+
+export default createComponent({
+    setup() {
+        const world = worldValue();
+        const worldObj = worldObject();
+        return {
+            world,
+            worldObj,
+        };
+    },
 });
-
-export default App;
 </script>
