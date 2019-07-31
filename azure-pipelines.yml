@@ -18,6 +18,3 @@ steps:
     displayName: Build storybook
   - script: make check
     displayName: Check
-  - script: sccache --show-stats
-    displayName: Show sccache stats
-    condition: eq(variables.CACHE_RESTORED_SCCACHE, 'true')
