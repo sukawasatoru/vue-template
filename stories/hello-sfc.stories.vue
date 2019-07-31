@@ -21,12 +21,12 @@
 </template>
 <script lang='ts'>
 import {storiesOf} from "@storybook/vue";
-import Vue from 'vue';
+import {createComponent} from "vue-function-api";
 
-const HelloSFC = Vue.extend({});
-
-export default HelloSFC;
+const HelloSFC = createComponent<unknown>({});
 
 storiesOf('Hello SFC', module)
     .add('default', () => HelloSFC);
+
+export default HelloSFC;
 </script>

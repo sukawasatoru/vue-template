@@ -15,8 +15,12 @@
  */
 
 import {configure} from '@storybook/vue';
+import Vue from 'vue';
+import {plugin as VueFunctionApi} from 'vue-function-api';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'material-design-icons/iconfont/material-icons.css';
+
+Vue.use(VueFunctionApi);
 
 const req = require.context('../stories', true, /\.stories\.vue$/);
 
