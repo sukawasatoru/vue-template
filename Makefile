@@ -62,5 +62,13 @@ storybook: setup
 	$(NPM) run build-storybook
 
 node_modules/setup-dummy: package.json
+ifeq (npm,$(NPM))
+ifneq ($(CI),)
+	$(NPM) ci
+else
 	$(NPM) install
+endif
+else
+	$(NPM) install
+endif
 	$(call touch,node_modules/setup-dummy)
