@@ -37,9 +37,3 @@ jobs:
         displayName: Build
       - script: make -j"$(sysctl hw.logicalcpu | cut -d' ' -f2)" check
         displayName: Check
-  - script: make
-    displayName: Build
-  - script: make storybook
-    displayName: Build storybook
-  - script: make check
-    displayName: Check
