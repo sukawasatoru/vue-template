@@ -1,3 +1,5 @@
+variables:
+  CI: true
 trigger:
   - master
 jobs:
