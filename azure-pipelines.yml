@@ -1,17 +1,42 @@
-variables:
-  NPM_CONFIG_CACHE: $(Pipeline.Workspace)/.npm
 trigger:
   - master
-pool:
-  vmImage: 'ubuntu-16.04'
-steps:
-  - checkout: self
-    fetchDepth: 1
-  - task: CacheBeta@0
-    inputs:
-      key: $(Build.SourcesDirectory)/package-lock.json
-      path: $(NPM_CONFIG_CACHE)
-    displayName: Cache npm
+jobs:
+  - job:
+    displayName: Linux
+    pool:
+      vmImage: 'ubuntu-16.04'
+    steps:
+      - checkout: self
+        fetchDepth: 1
+      - script: rustup component add clippy
+        displayName: Setup Rust
+        workingDirectory: $(Build.SourcesDirectory)/server
+      - script: make -j"$(cat /proc/cpuinfo | grep -e '^processor' | wc -l)"
+        displayName: Build
+      - script: make -j"$(cat /proc/cpuinfo | grep -e '^processor' | wc -l)" check
+        displayName: Check
+  - job:
+    displayName: Windows
+    pool:
+      vmImage: 'windows-latest'
+    steps:
+      - checkout: self
+        fetchDepth: 1
+      - script: make
+        displayName: Build
+      - script: make check
+        displayName: Check
+  - job:
+    displayName: macOS
+    pool:
+      vmImage: 'macOS-latest'
+    steps:
+      - checkout: self
+        fetchDepth: 1
+      - script: make -j"$(sysctl hw.logicalcpu | cut -d' ' -f2)"
+        displayName: Build
+      - script: make -j"$(sysctl hw.logicalcpu | cut -d' ' -f2)" check
+        displayName: Check
   - script: make
     displayName: Build
   - script: make storybook
