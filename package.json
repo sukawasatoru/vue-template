@@ -25,7 +25,7 @@
     "@storybook/addon-info": "5.1.9",
     "@storybook/addon-links": "5.1.9",
     "@storybook/addons": "5.1.10",
-    "@storybook/vue": "5.1.9",
+    "@storybook/vue": "5.1.10",
     "@types/html-webpack-plugin": "3.2.1",
     "@types/node": "12.6.9",
     "@types/storybook__vue": "5.0.2",
