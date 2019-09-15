@@ -23,7 +23,7 @@
   "dependencies": {
     "@storybook/addon-actions": "5.1.11",
     "@storybook/addon-info": "5.1.11",
-    "@storybook/addon-links": "5.1.11",
+    "@storybook/addon-links": "5.2.0",
     "@storybook/addons": "5.1.11",
     "@storybook/vue": "5.1.11",
     "@types/html-webpack-plugin": "3.2.1",
