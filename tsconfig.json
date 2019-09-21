@@ -1,18 +1,9 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    "module": "esnext",
+    "module": "es2015",
     "moduleResolution": "node",
     "sourceMap": true,
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "es2018",
-      "es2018.intl",
-      "es2018.promise",
-      "es2018.regexp",
-      "scripthost"
-    ],
     "rootDirs": [
       "src",
       "stories"
@@ -26,8 +17,5 @@
   },
   "include": [
     "src/**/*"
-  ],
-  "exclude": [
-    "node_modules"
   ]
 }
